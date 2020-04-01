@@ -1,0 +1,10 @@
+foreach character in input:
+	binaryC <- binary representation of a character
+	msb <- getParityBitForMsb of this binary
+	lsb <- getLsb of this binary
+	
+	msbPar = 'x' + msb + parityBits
+	lsbPar = 'x' + lsb + parityBits
+	
+	print into output file 4 data bits + 3 parity bits of MSB
+	print into output file 4 data bits + 3 parity bits of LSB
