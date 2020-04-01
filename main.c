@@ -3,11 +3,14 @@
 
 #define leastSignificantBit 0x01
 
-void printBits(uint8_t c)
+void printByte(char byte, FILE *file)
 {
+    fwrite(&byte, 1, 1, file);
+
+    printf("Character is %c\n", byte);
     for (int i = 7; i >= 0; i--)
     {
-        printf("%d", (c >> i) & 0x01);
+        printf("%d", (byte >> i) & 0x01);
     }
 }
 
@@ -66,21 +69,28 @@ uint8_t processLsb(uint8_t c) {
 int main() {
 
     FILE *input = fopen("D:\\Projects\\Adidas\\input.txt", "rb");
-    uint8_t character;
+    FILE *output = fopen("D:\\Projects\\Adidas\\output.txt", "w");
 
-    if (input == NULL)
+    if (input == NULL || output == NULL)
     {
         printf("Error! File not found.");
         return -1;
     }
 
+    uint8_t character;
+
     while (fread(&character, 1, 1, input) == 1)
     {
         uint8_t encodedLsb = processLsb(character);
         uint8_t encodedMsb = processMsb(character);
+
+        printByte(encodedMsb, output);
+        printf("\n");
+        printByte(encodedLsb, output);
     }
 
     fclose(input);
+    fclose(output);
 
     return 0;
 }

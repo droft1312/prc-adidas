@@ -9,8 +9,6 @@
 D:/Projects/Adidas/main.c
 stdio.h
 -
-stdbool.h
--
 stdint.h
 -
 
