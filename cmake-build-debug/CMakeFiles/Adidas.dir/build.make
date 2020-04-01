@@ -56,27 +56,27 @@ include CMakeFiles/Adidas.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Adidas.dir/flags.make
 
-CMakeFiles/Adidas.dir/main.c.obj: CMakeFiles/Adidas.dir/flags.make
-CMakeFiles/Adidas.dir/main.c.obj: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Projects\Adidas\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Adidas.dir/main.c.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Adidas.dir\main.c.obj   -c D:\Projects\Adidas\main.c
+CMakeFiles/Adidas.dir/encode.c.obj: CMakeFiles/Adidas.dir/flags.make
+CMakeFiles/Adidas.dir/encode.c.obj: ../encode.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Projects\Adidas\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Adidas.dir/encode.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Adidas.dir\encode.c.obj   -c D:\Projects\Adidas\encode.c
 
-CMakeFiles/Adidas.dir/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Adidas.dir/main.c.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\Projects\Adidas\main.c > CMakeFiles\Adidas.dir\main.c.i
+CMakeFiles/Adidas.dir/encode.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Adidas.dir/encode.c.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\Projects\Adidas\encode.c > CMakeFiles\Adidas.dir\encode.c.i
 
-CMakeFiles/Adidas.dir/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Adidas.dir/main.c.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\Projects\Adidas\main.c -o CMakeFiles\Adidas.dir\main.c.s
+CMakeFiles/Adidas.dir/encode.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Adidas.dir/encode.c.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\Projects\Adidas\encode.c -o CMakeFiles\Adidas.dir\encode.c.s
 
 # Object files for target Adidas
 Adidas_OBJECTS = \
-"CMakeFiles/Adidas.dir/main.c.obj"
+"CMakeFiles/Adidas.dir/encode.c.obj"
 
 # External object files for target Adidas
 Adidas_EXTERNAL_OBJECTS =
 
-Adidas.exe: CMakeFiles/Adidas.dir/main.c.obj
+Adidas.exe: CMakeFiles/Adidas.dir/encode.c.obj
 Adidas.exe: CMakeFiles/Adidas.dir/build.make
 Adidas.exe: CMakeFiles/Adidas.dir/linklibs.rsp
 Adidas.exe: CMakeFiles/Adidas.dir/objects1.rsp

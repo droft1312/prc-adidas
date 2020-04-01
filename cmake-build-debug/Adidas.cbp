@@ -74,7 +74,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="D:/Projects/Adidas/main.c">
+		<Unit filename="D:/Projects/Adidas/encode.c">
 			<Option target="Adidas"/>
 		</Unit>
 		<Unit filename="D:/Projects/Adidas/CMakeLists.txt">

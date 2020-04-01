@@ -2,7 +2,7 @@ file(REMOVE_RECURSE
   "Adidas.exe"
   "Adidas.exe.manifest"
   "Adidas.pdb"
-  "CMakeFiles/Adidas.dir/main.c.obj"
+  "CMakeFiles/Adidas.dir/encode.c.obj"
   "libAdidas.dll.a"
 )
 

@@ -1,17 +1,12 @@
 #include <stdio.h>
 #include <stdint.h>
+#include <string.h>
 
 #define leastSignificantBit 0x01
 
-void printByte(char byte, FILE *file)
+void printByte(uint8_t byte, FILE *file)
 {
     fwrite(&byte, 1, 1, file);
-
-    printf("Character is %c\n", byte);
-    for (int i = 7; i >= 0; i--)
-    {
-        printf("%d", (byte >> i) & 0x01);
-    }
 }
 
 uint8_t combineBitsAndParityBits(uint8_t d0, uint8_t d1, uint8_t d2, uint8_t d3)
@@ -66,10 +61,16 @@ uint8_t processLsb(uint8_t c) {
     return combineBitsAndParityBits(d0, d1, d2, d3);
 }
 
-int main() {
+int main(int argc, char *argv[])
+{
+//    if (argc != 3)
+//    {
+//        printf("Error! More or less arguments are needed to make it work.");
+//        return -1;
+//    }
 
     FILE *input = fopen("D:\\Projects\\Adidas\\input.txt", "rb");
-    FILE *output = fopen("D:\\Projects\\Adidas\\output.txt", "w");
+    FILE *output = fopen("D:\\Projects\\Adidas\\output.txt", "wb");
 
     if (input == NULL || output == NULL)
     {

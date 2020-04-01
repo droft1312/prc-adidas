@@ -122,32 +122,32 @@ Adidas/fast:
 	$(MAKE) -f CMakeFiles\Adidas.dir\build.make CMakeFiles/Adidas.dir/build
 .PHONY : Adidas/fast
 
-main.obj: main.c.obj
+encode.obj: encode.c.obj
 
-.PHONY : main.obj
+.PHONY : encode.obj
 
 # target to build an object file
-main.c.obj:
-	$(MAKE) -f CMakeFiles\Adidas.dir\build.make CMakeFiles/Adidas.dir/main.c.obj
-.PHONY : main.c.obj
+encode.c.obj:
+	$(MAKE) -f CMakeFiles\Adidas.dir\build.make CMakeFiles/Adidas.dir/encode.c.obj
+.PHONY : encode.c.obj
 
-main.i: main.c.i
+encode.i: encode.c.i
 
-.PHONY : main.i
+.PHONY : encode.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) -f CMakeFiles\Adidas.dir\build.make CMakeFiles/Adidas.dir/main.c.i
-.PHONY : main.c.i
+encode.c.i:
+	$(MAKE) -f CMakeFiles\Adidas.dir\build.make CMakeFiles/Adidas.dir/encode.c.i
+.PHONY : encode.c.i
 
-main.s: main.c.s
+encode.s: encode.c.s
 
-.PHONY : main.s
+.PHONY : encode.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) -f CMakeFiles\Adidas.dir\build.make CMakeFiles/Adidas.dir/main.c.s
-.PHONY : main.c.s
+encode.c.s:
+	$(MAKE) -f CMakeFiles\Adidas.dir\build.make CMakeFiles/Adidas.dir/encode.c.s
+.PHONY : encode.c.s
 
 # Help Target
 help:
@@ -158,9 +158,9 @@ help:
 	@echo ... rebuild_cache
 	@echo ... Adidas
 	@echo ... edit_cache
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
+	@echo ... encode.obj
+	@echo ... encode.i
+	@echo ... encode.s
 .PHONY : help
 
 

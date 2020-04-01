@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "D:/Projects/Adidas/main.c" "D:/Projects/Adidas/cmake-build-debug/CMakeFiles/Adidas.dir/main.c.obj"
+  "D:/Projects/Adidas/encode.c" "D:/Projects/Adidas/cmake-build-debug/CMakeFiles/Adidas.dir/encode.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
