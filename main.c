@@ -3,10 +3,16 @@
 
 #define leastSignificantBit 0x01
 
-char getParityBitForMsb(char c)
+void printBits(char c)
 {
-    int sum = 0;
+    for (int i = 7; i >= 0; i--)
+    {
+        printf("%d", (c >> i) & 0x01);
+    }
+}
 
+char getParityBitForMsb(unsigned char c)
+{
     char d3, d2, d1, d0;
 
     d3 = (c >> 7) & leastSignificantBit;
@@ -14,32 +20,47 @@ char getParityBitForMsb(char c)
     d1 = (c >> 5) & leastSignificantBit;
     d0 = (c >> 4) & leastSignificantBit;
 
-    for (int i = 7;  i >= 4; i--)
-    {
-        char bit = (c >> i) & leastSignificantBit;
+    char p2, p1, p0;
 
-        if (bit == 1)
-        {
-            ++sum;
-        }
-    }
+    p2 = (d2 + d1 + d3) & 1
+            ? ((d2 + d1 + d3) == 0 ? 0 : 1)
+            : 0;
+    p1 = (d1 + d3 + d0) & 1
+            ? ((d1 + d3 + d0) == 0 ? 0 : 1)
+            : 0;
+    p0 = (d2 + d1 + d0) & 1
+            ? ((d2 + d1 + d0) == 0 ? 0 : 1)
+            : 0;
 
-    // if it's odd return 1, else return 0
-    return (sum & 1) ? 1 : 0;
+    char result = 0x00;
+
+    if (d3 != 0)
+        result |= 1UL << 0;
+
+    if (d2 != 0)
+        result |= 1UL << 1;
+
+    if (d1 != 0)
+        result |= 1UL << 2;
+
+    if (d0 != 0)
+        result |= 1UL << 3;
+
+    if (p2 != 0)
+        result |= 1UL << 4;
+
+    if (p1 != 0)
+        result |= 1UL << 5;
+
+    if (p0 != 0)
+        result |= 1UL << 6;
+
+    printBits(result);
+
+    return result;
 }
 
 void getLsb(char c) {
-
-}
-
-void printBits(char c) {
-
-    for (int i = 7; i >= 0; i--)
-    {
-        char x = c >> i;
-        char y = x & 0x01;
-        printf("%d", (c >> i) & 0x01);
-    }
 
 }
 
