@@ -1,6 +1,6 @@
 foreach character in input:
 	binaryC <- binary representation of a character
-	msb <- getParityBitForMsb of this binary
+	msb <- processMsb of this binary
 	lsb <- getLsb of this binary
 	
 	msbPar = 'x' + msb + parityBits
