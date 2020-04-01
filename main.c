@@ -1,9 +1,9 @@
 #include <stdio.h>
-#include <stdbool.h>
+#include <stdint.h>
 
 #define leastSignificantBit 0x01
 
-void printBits(char c)
+void printBits(uint8_t c)
 {
     for (int i = 7; i >= 0; i--)
     {
@@ -11,9 +11,9 @@ void printBits(char c)
     }
 }
 
-char combineBitsAndParityBits(char d0, char d1, char d2, char d3)
+uint8_t combineBitsAndParityBits(uint8_t d0, uint8_t d1, uint8_t d2, uint8_t d3)
 {
-    char p2, p1, p0;
+    uint8_t p2, p1, p0;
 
     p2 = (d2 + d1 + d3) & 1
          ? ((d2 + d1 + d3) == 0 ? 0 : 1)
@@ -25,35 +25,22 @@ char combineBitsAndParityBits(char d0, char d1, char d2, char d3)
          ? ((d2 + d1 + d0) == 0 ? 0 : 1)
          : 0;
 
-    char result = 0x00;
+    uint8_t result = 0x00;
 
-    if (d3 != 0)
-        result |= 1 << 0;
+    d3 = d3 << 6;
+    d2 = d2 << 5;
+    d1 = d1 << 4;
+    d0 = d0 << 3;
 
-    if (d2 != 0)
-        result |= 1 << 1;
+    p2 = p2 << 2;
+    p1 = p1 << 1;
 
-    if (d1 != 0)
-        result |= 1 << 2;
-
-    if (d0 != 0)
-        result |= 1 << 3;
-
-    if (p2 != 0)
-        result |= 1 << 4;
-
-    if (p1 != 0)
-        result |= 1 << 5;
-
-    if (p0 != 0)
-        result |= 1 << 6;
-
-    printBits(result);
+    result |= d3 | d2 | d1 | d0 | p2 | p1 | p0;
 
     return result;
 }
 
-char processMsb(unsigned char c)
+uint8_t processMsb(uint8_t c)
 {
     char d3, d2, d1, d0;
 
@@ -65,8 +52,8 @@ char processMsb(unsigned char c)
     return combineBitsAndParityBits(d0, d1, d2, d3);
 }
 
-char processLsb(char c) {
-    char d3, d2, d1, d0;
+uint8_t processLsb(uint8_t c) {
+    uint8_t d3, d2, d1, d0;
 
     d3 = (c >> 3) & leastSignificantBit;
     d2 = (c >> 2) & leastSignificantBit;
@@ -76,11 +63,10 @@ char processLsb(char c) {
     return combineBitsAndParityBits(d0, d1, d2, d3);
 }
 
-
 int main() {
 
-    FILE *input = fopen("D:\\Projects\\Adidas\\input.txt", "r");
-    char character;
+    FILE *input = fopen("D:\\Projects\\Adidas\\input.txt", "rb");
+    uint8_t character;
 
     if (input == NULL)
     {
@@ -88,10 +74,10 @@ int main() {
         return -1;
     }
 
-    while ((character = fgetc(input)) != EOF)
+    while (fread(&character, 1, 1, input) == 1)
     {
-//        processMsb(character);
-        processLsb(character);
+        uint8_t encodedLsb = processLsb(character);
+        uint8_t encodedMsb = processMsb(character);
     }
 
     fclose(input);
