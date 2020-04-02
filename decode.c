@@ -11,6 +11,11 @@ void printByte(uint8_t byte)
     }
 }
 
+void writeOut(uint8_t byte, FILE *file)
+{
+    fwrite(&byte, 1, 1, file);
+}
+
 // n is the nth bit you wanna switch
 uint8_t switchBit(uint8_t byte, uint8_t n)
 {
@@ -147,7 +152,7 @@ int main(int argc, char *argv[])
 
         uint8_t decodedChar = decode(msb, lsb);
 
-        printByte(decodedChar);
+        writeOut(decodedChar, output);
     }
 
     fclose(input);
