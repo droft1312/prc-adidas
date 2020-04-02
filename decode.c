@@ -35,31 +35,31 @@ void flip(uint8_t byte)
 
     if (p2 != correctP2 && p1 == correctP1 && p0 == correctP0)
     {
-
+        // p2 should be switched
     }
     else if (p2 != correctP2 && p1 != correctP1 && p0 == correctP0)
     {
-
+        // d3 should be switched
     }
     else if (p2 != correctP2 && p1 != correctP1 && p0 != correctP0)
     {
-
+        // d1 should be switched
     }
     else if (p2 == correctP2 && p1 == correctP1 && p0 != correctP0)
     {
-
+        // p0 should be switched
     }
     else if (p2 == correctP2 && p1 != correctP1 && p0 != correctP0)
     {
-
+        // d0 should be switched
     }
     else if (p2 != correctP2 && p1 == correctP1 && p0 != correctP0)
     {
-
+        // d2 should be switched
     }
     else if (p2 == correctP2 && p1 != correctP1 && p0 == correctP0)
     {
-
+        // p1 should be switched
     }
     else
     {
