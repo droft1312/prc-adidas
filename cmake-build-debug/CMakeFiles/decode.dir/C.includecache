@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-D:/Projects/Adidas/encode.c
+D:/Projects/Adidas/decode.c
 stdio.h
 -
 stdint.h

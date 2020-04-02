@@ -53,11 +53,13 @@ CMAKE_BINARY_DIR = D:\Projects\Adidas\cmake-build-debug
 
 # The main recursive "all" target.
 all: CMakeFiles/Adidas.dir/all
+all: CMakeFiles/decode.dir/all
 
 .PHONY : all
 
 # The main recursive "clean" target.
 clean: CMakeFiles/Adidas.dir/clean
+clean: CMakeFiles/decode.dir/clean
 
 .PHONY : clean
 
@@ -92,6 +94,33 @@ Adidas: CMakeFiles/Adidas.dir/rule
 CMakeFiles/Adidas.dir/clean:
 	$(MAKE) -f CMakeFiles\Adidas.dir\build.make CMakeFiles/Adidas.dir/clean
 .PHONY : CMakeFiles/Adidas.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/decode.dir
+
+# All Build rule for target.
+CMakeFiles/decode.dir/all:
+	$(MAKE) -f CMakeFiles\decode.dir\build.make CMakeFiles/decode.dir/depend
+	$(MAKE) -f CMakeFiles\decode.dir\build.make CMakeFiles/decode.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\Projects\Adidas\cmake-build-debug\CMakeFiles --progress-num=3,4 "Built target decode"
+.PHONY : CMakeFiles/decode.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/decode.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Projects\Adidas\cmake-build-debug\CMakeFiles 2
+	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/decode.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Projects\Adidas\cmake-build-debug\CMakeFiles 0
+.PHONY : CMakeFiles/decode.dir/rule
+
+# Convenience name for target.
+decode: CMakeFiles/decode.dir/rule
+
+.PHONY : decode
+
+# clean rule for target.
+CMakeFiles/decode.dir/clean:
+	$(MAKE) -f CMakeFiles\decode.dir\build.make CMakeFiles/decode.dir/clean
+.PHONY : CMakeFiles/decode.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

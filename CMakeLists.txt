@@ -7,3 +7,4 @@ set(DCMAKE_SH="CMAKE_SH-NOTFOUND")
 
 
 add_executable(Adidas encode.c)
+add_executable(decode decode.c)

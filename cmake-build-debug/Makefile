@@ -122,6 +122,46 @@ Adidas/fast:
 	$(MAKE) -f CMakeFiles\Adidas.dir\build.make CMakeFiles/Adidas.dir/build
 .PHONY : Adidas/fast
 
+#=============================================================================
+# Target rules for targets named decode
+
+# Build rule for target.
+decode: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 decode
+.PHONY : decode
+
+# fast build rule for target.
+decode/fast:
+	$(MAKE) -f CMakeFiles\decode.dir\build.make CMakeFiles/decode.dir/build
+.PHONY : decode/fast
+
+decode.obj: decode.c.obj
+
+.PHONY : decode.obj
+
+# target to build an object file
+decode.c.obj:
+	$(MAKE) -f CMakeFiles\decode.dir\build.make CMakeFiles/decode.dir/decode.c.obj
+.PHONY : decode.c.obj
+
+decode.i: decode.c.i
+
+.PHONY : decode.i
+
+# target to preprocess a source file
+decode.c.i:
+	$(MAKE) -f CMakeFiles\decode.dir\build.make CMakeFiles/decode.dir/decode.c.i
+.PHONY : decode.c.i
+
+decode.s: decode.c.s
+
+.PHONY : decode.s
+
+# target to generate assembly for a file
+decode.c.s:
+	$(MAKE) -f CMakeFiles\decode.dir\build.make CMakeFiles/decode.dir/decode.c.s
+.PHONY : decode.c.s
+
 encode.obj: encode.c.obj
 
 .PHONY : encode.obj
@@ -157,7 +197,11 @@ help:
 	@echo ... depend
 	@echo ... rebuild_cache
 	@echo ... Adidas
+	@echo ... decode
 	@echo ... edit_cache
+	@echo ... decode.obj
+	@echo ... decode.i
+	@echo ... decode.s
 	@echo ... encode.obj
 	@echo ... encode.i
 	@echo ... encode.s
