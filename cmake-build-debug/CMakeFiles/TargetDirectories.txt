@@ -1,5 +1,0 @@
-D:/Projects/Adidas/cmake-build-debug/CMakeFiles/decode.dir
-D:/Projects/Adidas/cmake-build-debug/CMakeFiles/encode.dir
-D:/Projects/Adidas/cmake-build-debug/CMakeFiles/channel.dir
-D:/Projects/Adidas/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/Projects/Adidas/cmake-build-debug/CMakeFiles/rebuild_cache.dir

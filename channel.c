@@ -3,6 +3,16 @@
 #include <stdlib.h>
 #include<time.h>
 
+#define leastSignificantBit 0b00000001
+
+void printByte(uint8_t byte)
+{
+    for (int i = 7; i >= 0; i--)
+    {
+        printf("%d", (byte >> i) & leastSignificantBit);
+    }
+}
+
 void writeOut(uint8_t byte, FILE *file)
 {
     fwrite(&byte, 1, 1, file);
