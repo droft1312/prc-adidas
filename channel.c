@@ -43,16 +43,9 @@ int main(int argc, char *argv[])
     {
         int randomNumber = rand();
 
-        if (randomNumber % 3 == 0)
-        {
-            uint8_t corruptedByte = character ^ (1 << (randomNumber % 8));
+        uint8_t corruptedByte = character ^ (1 << (randomNumber % 8));
 
-            writeOut(corruptedByte, output);
-        }
-        else
-        {
-            writeOut(character, output);
-        }
+        writeOut(corruptedByte, output);
     }
 
     fclose(input);
