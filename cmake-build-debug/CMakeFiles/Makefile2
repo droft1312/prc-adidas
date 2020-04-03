@@ -52,14 +52,16 @@ CMAKE_BINARY_DIR = D:\Projects\Adidas\cmake-build-debug
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/Adidas.dir/all
 all: CMakeFiles/decode.dir/all
+all: CMakeFiles/encode.dir/all
+all: CMakeFiles/channel.dir/all
 
 .PHONY : all
 
 # The main recursive "clean" target.
-clean: CMakeFiles/Adidas.dir/clean
 clean: CMakeFiles/decode.dir/clean
+clean: CMakeFiles/encode.dir/clean
+clean: CMakeFiles/channel.dir/clean
 
 .PHONY : clean
 
@@ -67,33 +69,6 @@ clean: CMakeFiles/decode.dir/clean
 preinstall:
 
 .PHONY : preinstall
-
-#=============================================================================
-# Target rules for target CMakeFiles/Adidas.dir
-
-# All Build rule for target.
-CMakeFiles/Adidas.dir/all:
-	$(MAKE) -f CMakeFiles\Adidas.dir\build.make CMakeFiles/Adidas.dir/depend
-	$(MAKE) -f CMakeFiles\Adidas.dir\build.make CMakeFiles/Adidas.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\Projects\Adidas\cmake-build-debug\CMakeFiles --progress-num=1,2 "Built target Adidas"
-.PHONY : CMakeFiles/Adidas.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/Adidas.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Projects\Adidas\cmake-build-debug\CMakeFiles 2
-	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/Adidas.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Projects\Adidas\cmake-build-debug\CMakeFiles 0
-.PHONY : CMakeFiles/Adidas.dir/rule
-
-# Convenience name for target.
-Adidas: CMakeFiles/Adidas.dir/rule
-
-.PHONY : Adidas
-
-# clean rule for target.
-CMakeFiles/Adidas.dir/clean:
-	$(MAKE) -f CMakeFiles\Adidas.dir\build.make CMakeFiles/Adidas.dir/clean
-.PHONY : CMakeFiles/Adidas.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/decode.dir
@@ -121,6 +96,60 @@ decode: CMakeFiles/decode.dir/rule
 CMakeFiles/decode.dir/clean:
 	$(MAKE) -f CMakeFiles\decode.dir\build.make CMakeFiles/decode.dir/clean
 .PHONY : CMakeFiles/decode.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/encode.dir
+
+# All Build rule for target.
+CMakeFiles/encode.dir/all:
+	$(MAKE) -f CMakeFiles\encode.dir\build.make CMakeFiles/encode.dir/depend
+	$(MAKE) -f CMakeFiles\encode.dir\build.make CMakeFiles/encode.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\Projects\Adidas\cmake-build-debug\CMakeFiles --progress-num=5,6 "Built target encode"
+.PHONY : CMakeFiles/encode.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/encode.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Projects\Adidas\cmake-build-debug\CMakeFiles 2
+	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/encode.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Projects\Adidas\cmake-build-debug\CMakeFiles 0
+.PHONY : CMakeFiles/encode.dir/rule
+
+# Convenience name for target.
+encode: CMakeFiles/encode.dir/rule
+
+.PHONY : encode
+
+# clean rule for target.
+CMakeFiles/encode.dir/clean:
+	$(MAKE) -f CMakeFiles\encode.dir\build.make CMakeFiles/encode.dir/clean
+.PHONY : CMakeFiles/encode.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/channel.dir
+
+# All Build rule for target.
+CMakeFiles/channel.dir/all:
+	$(MAKE) -f CMakeFiles\channel.dir\build.make CMakeFiles/channel.dir/depend
+	$(MAKE) -f CMakeFiles\channel.dir\build.make CMakeFiles/channel.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\Projects\Adidas\cmake-build-debug\CMakeFiles --progress-num=1,2 "Built target channel"
+.PHONY : CMakeFiles/channel.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/channel.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Projects\Adidas\cmake-build-debug\CMakeFiles 2
+	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/channel.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Projects\Adidas\cmake-build-debug\CMakeFiles 0
+.PHONY : CMakeFiles/channel.dir/rule
+
+# Convenience name for target.
+channel: CMakeFiles/channel.dir/rule
+
+.PHONY : channel
+
+# clean rule for target.
+CMakeFiles/channel.dir/clean:
+	$(MAKE) -f CMakeFiles\channel.dir\build.make CMakeFiles/channel.dir/clean
+.PHONY : CMakeFiles/channel.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

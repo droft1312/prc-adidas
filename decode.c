@@ -125,8 +125,14 @@ uint8_t decode(uint8_t msb, uint8_t lsb)
 
 int main(int argc, char *argv[])
 {
-    FILE *input = fopen("D:\\Projects\\Adidas\\output.txt", "rb");
-    FILE *output = fopen("D:\\Projects\\Adidas\\output-output.txt", "wb");
+    if (argc != 3)
+    {
+        printf("Pass all arguments!");
+        return -1;
+    }
+
+    FILE *input = fopen(argv[1], "rb");
+    FILE *output = fopen(argv[2], "wb");
 
     if (input == NULL || output == NULL)
     {

@@ -55,17 +55,6 @@ CMAKE_BINARY_DIR = D:\Projects\Adidas\cmake-build-debug
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"D:\Programs\CLion 2019.3.5\bin\cmake\win\bin\cmake.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -76,6 +65,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	"D:\Programs\CLion 2019.3.5\bin\cmake\win\bin\cmake.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -110,19 +110,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Adidas
-
-# Build rule for target.
-Adidas: cmake_check_build_system
-	$(MAKE) -f CMakeFiles\Makefile2 Adidas
-.PHONY : Adidas
-
-# fast build rule for target.
-Adidas/fast:
-	$(MAKE) -f CMakeFiles\Adidas.dir\build.make CMakeFiles/Adidas.dir/build
-.PHONY : Adidas/fast
-
-#=============================================================================
 # Target rules for targets named decode
 
 # Build rule for target.
@@ -134,6 +121,59 @@ decode: cmake_check_build_system
 decode/fast:
 	$(MAKE) -f CMakeFiles\decode.dir\build.make CMakeFiles/decode.dir/build
 .PHONY : decode/fast
+
+#=============================================================================
+# Target rules for targets named encode
+
+# Build rule for target.
+encode: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 encode
+.PHONY : encode
+
+# fast build rule for target.
+encode/fast:
+	$(MAKE) -f CMakeFiles\encode.dir\build.make CMakeFiles/encode.dir/build
+.PHONY : encode/fast
+
+#=============================================================================
+# Target rules for targets named channel
+
+# Build rule for target.
+channel: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 channel
+.PHONY : channel
+
+# fast build rule for target.
+channel/fast:
+	$(MAKE) -f CMakeFiles\channel.dir\build.make CMakeFiles/channel.dir/build
+.PHONY : channel/fast
+
+channel.obj: channel.c.obj
+
+.PHONY : channel.obj
+
+# target to build an object file
+channel.c.obj:
+	$(MAKE) -f CMakeFiles\channel.dir\build.make CMakeFiles/channel.dir/channel.c.obj
+.PHONY : channel.c.obj
+
+channel.i: channel.c.i
+
+.PHONY : channel.i
+
+# target to preprocess a source file
+channel.c.i:
+	$(MAKE) -f CMakeFiles\channel.dir\build.make CMakeFiles/channel.dir/channel.c.i
+.PHONY : channel.c.i
+
+channel.s: channel.c.s
+
+.PHONY : channel.s
+
+# target to generate assembly for a file
+channel.c.s:
+	$(MAKE) -f CMakeFiles\channel.dir\build.make CMakeFiles/channel.dir/channel.c.s
+.PHONY : channel.c.s
 
 decode.obj: decode.c.obj
 
@@ -168,7 +208,7 @@ encode.obj: encode.c.obj
 
 # target to build an object file
 encode.c.obj:
-	$(MAKE) -f CMakeFiles\Adidas.dir\build.make CMakeFiles/Adidas.dir/encode.c.obj
+	$(MAKE) -f CMakeFiles\encode.dir\build.make CMakeFiles/encode.dir/encode.c.obj
 .PHONY : encode.c.obj
 
 encode.i: encode.c.i
@@ -177,7 +217,7 @@ encode.i: encode.c.i
 
 # target to preprocess a source file
 encode.c.i:
-	$(MAKE) -f CMakeFiles\Adidas.dir\build.make CMakeFiles/Adidas.dir/encode.c.i
+	$(MAKE) -f CMakeFiles\encode.dir\build.make CMakeFiles/encode.dir/encode.c.i
 .PHONY : encode.c.i
 
 encode.s: encode.c.s
@@ -186,7 +226,7 @@ encode.s: encode.c.s
 
 # target to generate assembly for a file
 encode.c.s:
-	$(MAKE) -f CMakeFiles\Adidas.dir\build.make CMakeFiles/Adidas.dir/encode.c.s
+	$(MAKE) -f CMakeFiles\encode.dir\build.make CMakeFiles/encode.dir/encode.c.s
 .PHONY : encode.c.s
 
 # Help Target
@@ -195,10 +235,14 @@ help:
 	@echo ... all (the default if no target is provided)
 	@echo ... clean
 	@echo ... depend
-	@echo ... rebuild_cache
-	@echo ... Adidas
 	@echo ... decode
+	@echo ... encode
+	@echo ... channel
 	@echo ... edit_cache
+	@echo ... rebuild_cache
+	@echo ... channel.obj
+	@echo ... channel.i
+	@echo ... channel.s
 	@echo ... decode.obj
 	@echo ... decode.i
 	@echo ... decode.s

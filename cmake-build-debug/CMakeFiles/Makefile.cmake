@@ -48,6 +48,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/Adidas.dir/DependInfo.cmake"
   "CMakeFiles/decode.dir/DependInfo.cmake"
+  "CMakeFiles/encode.dir/DependInfo.cmake"
+  "CMakeFiles/channel.dir/DependInfo.cmake"
   )
